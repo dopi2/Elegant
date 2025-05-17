@@ -1,0 +1,70 @@
+/* src/styles/main.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#hero {
+    margin-top: -3% !important;
+}
+
+#hero .cta-buttons {
+    display: flex;
+    gap: 1rem; /* Space between buttons */
+    align-items: center; /* Vertically align buttons */
+    justify-content: center; /* Center buttons horizontally */
+    flex-wrap: nowrap; /* Prevent buttons from wrapping to the next line */
+    width: 100%; /* Ensure the container spans the full width */
+}
+
+#btn1, #btn2 {
+    flex: 1; /* Make buttons take equal space */
+    max-width: 300px; /* Optional: Limit button width */
+    text-align: center; /* Center text inside buttons */
+}
+
+#btn1 {
+    padding-top: -50% !important;
+    margin-left: -30%;
+}
+
+#banner {
+    margin-top: 4% !important;
+    animation: slideIn 0.8s ease-out, fadeIn 1s ease-in;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#banner.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+/* Keyframes for banner animations */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.newsletter-modal {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.newsletter-modal.hidden {
+    opacity: 0;
+    transform: scale(0.9); /* Slightly shrink the modal */
+    pointer-events: none; /* Prevent interaction when hidden */
+}
